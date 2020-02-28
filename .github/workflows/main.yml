@@ -13,6 +13,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 13
+    - name: Setup MSBuild Path
+      uses: warrenbuckley/Setup-MSBuild@v1
     - name: Build
       run: |
         npm install
