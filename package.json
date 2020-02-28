@@ -1,0 +1,14 @@
+{
+  "name": "build-libzip",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mc2-ide/build-libzip.git",
+  "author": "Simon Hochrein <simon.hochrein@icloud.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/artifact": "^0.1.0",
+    "@actions/core": "^1.2.2",
+    "@actions/exec": "^1.0.3",
+    "request": "^2.88.2"
+  }
+}
