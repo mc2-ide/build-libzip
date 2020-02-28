@@ -1,10 +1,12 @@
 const core = require('@actions/core');
 const {exec} = require('@actions/exec');
+const {join} = require('path');
+
 async function run() {
   try {
     await exec('git', ['clone', 'https://github.com/nih-at/libzip']);
-    await exec('.\\libzip\\vstudio\\vsbuild.cmd', {
-      cwd: '.\\libzip\\vstudio'
+    await exec('./libzip/vstudio/vsbuild.cmd', {
+      cwd: join(process.cwd(), './libzip/vstudio')
     });
   // TODO - Get context data
 
