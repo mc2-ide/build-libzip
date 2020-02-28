@@ -10,7 +10,7 @@ async function run() {
     await exec('git', ['clone', 'https://github.com/madler/zlib'], {
       cwd: join(process.cwd(), './libzip/vstudio')
     });
-    await exec('./vsbuild.cmd', ['build', 'Visual Studio 16 2019'], {
+    await exec('./vsbuild.cmd', ['build', 'Visual Studio 16 2019', 'v142'], {
       cwd: join(process.cwd(), './libzip/vstudio')
     });
   // TODO - Get context data
