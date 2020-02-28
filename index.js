@@ -1,10 +1,15 @@
 const core = require('@actions/core');
 const {exec} = require('@actions/exec');
 const {join} = require('path');
+const {rmdirSync} = require('fs');
 
 async function run() {
   try {
     await exec('git', ['clone', 'https://github.com/nih-at/libzip']);
+    rmdirSync(join(process.cwd(), './libzip/vstudio/zlib'), {recursive: true});
+    await exec('git', ['clone', 'https://github.com/madler/zlib'], {
+      cwd: join(process.cwd(), './libzip/vstudio')
+    });
     await exec('./vsbuild.cmd', ['build', 'Visual Studio 16 2019'], {
       cwd: join(process.cwd(), './libzip/vstudio')
     });
